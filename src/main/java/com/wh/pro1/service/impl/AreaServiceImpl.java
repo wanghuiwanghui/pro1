@@ -29,7 +29,6 @@ public class AreaServiceImpl implements AreaService {
     public boolean update(Area area) {
         if (area.getId() != null && area.getId() > 0) {
             try {
-                String en = "en";
                 int count = areaDao.update(area);
                 if (count > 0) {
                     return true;
