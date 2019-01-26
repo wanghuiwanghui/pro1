@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="com.wh.pro1.dao.AreaDao">
+    <resultMap id="AreaResultMap" type="com.wh.pro1.entity.Area">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="priority" jdbcType="INTEGER" property="priority"/>
+        <result column="created_at" jdbcType="TIMESTAMP" property="createdAt"/>
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt"/>
+    </resultMap>
+    <select id="findOne" parameterType="java.lang.Long" resultMap="AreaResultMap">
+        select * from area where id = #{id}
+    </select>
+</mapper>
